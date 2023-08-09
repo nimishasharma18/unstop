@@ -1,4 +1,3 @@
-import {Container, Row,Col} from 'react-bootstrap';
 import styled from'styled-components';
 import agenda from '../assets/images/agenda.svg';
 import candidates from '../assets/images/candidates.svg';

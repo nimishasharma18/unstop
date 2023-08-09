@@ -7,15 +7,18 @@ const SidebarItems = [
         name: "Dashboard",
         route: '/',
         icon:dashboard,
+        cName: "nav-text"
     },
     {
         name: "Assessment",
         route: '/dashboard',
+        cName: "nav-text",
         icon:note_alt,
     },
     {
         name: "My Library",
         route: '/page-1',
+        cName: "nav-text",
         icon:quiz,
     },
   

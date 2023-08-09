@@ -1,4 +1,4 @@
-import {Modal,Form,Button, Dropdown} from 'react-bootstrap';
+import {Modal,Form,Button} from 'react-bootstrap';
 import Select from 'react-select';
 import close from '../assets/images/close.svg';
 import skill_close from '../assets/images/skill_close.svg';

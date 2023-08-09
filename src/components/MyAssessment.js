@@ -1,60 +1,42 @@
-import React from 'react';
-import { useState } from 'react';
-import styled from 'styled-components';
-import { Card, Nav } from 'react-bootstrap';
-import CandidateCard from './CandidateCard';
-import AssessmentForm from '../components/AssessmentForm';
+import { useState } from "react";
+import styled from "styled-components";
+
+import search from '../assets/images/search.svg';
+import filter from '../assets/images/filter.svg';
+import bar from '../assets/images/bar.svg';
 import add from '../assets/images/add.svg';
-import assignment from '../assets/images/assignment.svg';
+import link from '../assets/images/link.svg';
 import three_dots from '../assets/images/three_dots.svg';
 import calendar_today from '../assets/images/calendar_today.svg';
-import link from '../assets/images/link.svg';
-import divider from '../assets/images/divider.svg';
-import mobile_screen_share from '../assets/images/mobile_screen_share.svg';
+import assignment from '../assets/images/assignment.svg';
 
-function HomePageCard() {
-  const [showModal, setShowModal] = useState(false);
+import AssessmentForm from './AssessmentForm';
 
-  const handleClick = () => {
+const MyAssessment = () =>{
+  const [showModal,setShowModal] = useState(false);
+
+  const handleClick=()=>{
     setShowModal(true);
 
   }
 
-  // const showScreen =()=>{
-  //   setShowMobileScreen(true);
-  // }
+    return(
+<MyAssessmentBlock>
+<Header>
+<Title>My Assessment</Title>
+<ImgBlock>
+<img src ={search} alt="icons" height={22} width={22} />
+<img src ={filter} alt="icons" height={22} width={22} />
+<img src ={bar} alt="icons" height={22} width={22} />
 
-  return (
-    <AssessmentCard >
-      <CardTitleBlock >
-        <NavBar>
-          <CardTitle>Assessment</CardTitle>
-          <img src={divider} alt="dicider" />
-
-          <AssessmentTab variant="underline" >
-            <Nav.Item>
-              <ActiveAssessment active={true}>Assessment</ActiveAssessment >
-            </Nav.Item>
-
-          </AssessmentTab>
-        </NavBar>
-        <img src={mobile_screen_share} alt="mobile-screen" />
-
-      </CardTitleBlock>
-
-      <CardBody>
-        <HrSeparator />
-        <AssessmentTitle>Assessments Overview</AssessmentTitle>
-        <CandidateCard />
-        <MyAssessmentBlock>
-          <AssessmentTitle>My Assessment</AssessmentTitle>
-          <MyAssessmentBody>
-            <NewAssessmentCard>
+</ImgBlock>
+</Header>
+<NewAssessmentCard>
               <ImgBlock>
                 <img src={add} alt="assessment-add" onClick={handleClick} />
               </ImgBlock>
-              {showModal &&
-                <AssessmentForm showModal={showModal} setShowModal={setShowModal} />
+              {showModal && 
+            <AssessmentForm showModal={showModal} setShowModal={setShowModal}/>
               }
               <AssessmentTitle>New Assessment</AssessmentTitle>
               <AssessmentDesc>
@@ -64,10 +46,10 @@ function HomePageCard() {
 
             <AssignmentCard>
               <AssessmentImg>
+          
+                <AssignmentBlock>
                 <img src={assignment} alt="assignment" />
-                <img src={three_dots} alt="three-dots" />
-              </AssessmentImg>
-              <AssignmentTitleBlock>
+                <AssignmentTitleBlock>
                 <AssignmentTitle>
                   Math Assessment
                 </AssignmentTitle>
@@ -80,6 +62,13 @@ function HomePageCard() {
                   <DateDesc>20 Apr 2023</DateDesc>
                 </TitleDesc>
               </AssignmentTitleBlock>
+                </AssignmentBlock>
+              
+        
+               
+                <img src={three_dots} alt="three-dots" />
+              </AssessmentImg>
+             
               <HrDotted />
               <FooterSection>
                 <TimeDurationBlock>
@@ -102,13 +91,12 @@ function HomePageCard() {
                 </ShareBlock>
               </FooterSection>
             </AssignmentCard>
-
             <AssignmentCard>
               <AssessmentImg>
+          
+                <AssignmentBlock>
                 <img src={assignment} alt="assignment" />
-                <img src={three_dots} alt="three-dots" />
-              </AssessmentImg>
-              <AssignmentTitleBlock>
+                <AssignmentTitleBlock>
                 <AssignmentTitle>
                   Math Assessment
                 </AssignmentTitle>
@@ -121,6 +109,13 @@ function HomePageCard() {
                   <DateDesc>20 Apr 2023</DateDesc>
                 </TitleDesc>
               </AssignmentTitleBlock>
+                </AssignmentBlock>
+              
+        
+               
+                <img src={three_dots} alt="three-dots" />
+              </AssessmentImg>
+             
               <HrDotted />
               <FooterSection>
                 <TimeDurationBlock>
@@ -143,53 +138,83 @@ function HomePageCard() {
                 </ShareBlock>
               </FooterSection>
             </AssignmentCard>
+            <AssignmentCard>
+              <AssessmentImg>
+          
+                <AssignmentBlock>
+                <img src={assignment} alt="assignment" />
+                <AssignmentTitleBlock>
+                <AssignmentTitle>
+                  Math Assessment
+                </AssignmentTitle>
+                <TitleDesc>
+                  <Title>
+                    Job
+                  </Title>
+                  <TitleDivider>|</TitleDivider>
+                  <img src={calendar_today} alt="calendar" />
+                  <DateDesc>20 Apr 2023</DateDesc>
+                </TitleDesc>
+              </AssignmentTitleBlock>
+                </AssignmentBlock>
+              
+        
+               
+                <img src={three_dots} alt="three-dots" />
+              </AssessmentImg>
+             
+              <HrDotted />
+              <FooterSection>
+                <TimeDurationBlock>
+                  <TimeSec><TimeTxt>
+                    00</TimeTxt>
+                    <TimeTxt>Duration</TimeTxt></TimeSec>
 
-          </MyAssessmentBody>
-        </MyAssessmentBlock>
-      </CardBody>
-    </AssessmentCard>
-  );
+                  <QuestionSec><TimeTxt>
+                    00</TimeTxt>
+                    <TimeTxt>Question</TimeTxt></QuestionSec>
+                </TimeDurationBlock>
+                <ShareBlock>
+                  <ShareBtn>
+                    <img src={link} alt="share-icon" />
+                    <ShareTxt>Share</ShareTxt>
+                  </ShareBtn>
+                  <Tag>
+                    <TagTxt>LP</TagTxt>
+                  </Tag>
+                </ShareBlock>
+              </FooterSection>
+            </AssignmentCard>
+</MyAssessmentBlock>
+    )
 }
 
-export default HomePageCard;
+export default MyAssessment;
 
-const AssessmentCard = styled(Card)`
+const MyAssessmentBlock = styled.div`
+padding:22px;`
+
+const Header = styled.div`
 display: flex;
-padding: 20px;
-flex-direction: column;
-align-items: flex-start;
-
-align-self: stretch;
-border-radius: 0px 0px 12px 12px;
-background: #FFF;
-margin-left:20px;
+flex-direction: row;
+justify-content: space-between;
+align-content: center;
 `
 
-const CardTitle = styled.p`
- color: var(--text-100, #1C4980);
-font-feature-settings: 'clig' off, 'liga' off;
+const Title = styled.p`
+color: var(--text-100, #1C4980);
 font-family: Inter;
-font-size: 20px;
+font-size: 16px;
 font-style: normal;
 font-weight: 600;
-margin-right:5px;
-margin-top: 14px;
-line-height: 140%; `;
+margin:0;
+line-height: normal;
+`
 
-
-const CardTitleBlock = styled(Card.Title)`
-display:flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
+const ImgBlock =styled.div`
 `
 
 
-
-
-const CardBody = styled(Card.Body)`
-padding:20px;
-`
 
 const AssessmentTitle = styled.p`
 color: var(--text-100, #1C4980);
@@ -201,8 +226,6 @@ font-weight: 500;
 line-height: 140%; `
 
 
-const MyAssessmentBlock = styled.div`
-margin-top:3rem;`
 
 const NewAssessmentCard = styled.div`
 display: flex;
@@ -217,14 +240,7 @@ border-radius: 12px;
 border: 1px dashed var(--system-stroke-2, #DADCE0);
 background: var(--system-background, #F6F8FA);
 `
-const ImgBlock = styled.div`
-background-color:white;
-border-radius:50%;
-height:70px;
-width:70px;
-justify-content:center;
-display:flex;
-`
+
 
 const AssessmentDesc = styled.p`
 color: var(--text-100, #1C4980);
@@ -235,9 +251,7 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;`
 
-const MyAssessmentBody = styled.div`
-display:flex;
-`
+
 
 const AssessmentImg = styled.div`
 display: flex;
@@ -251,13 +265,14 @@ flex-direction: column;
 margin-right:10px;
 gap: 16px;
 flex: 1 0 0;
-
+margin-top:20px;
 border-radius: 12px;
 border: 1px solid var(--system-stroke-2, #DADCE0);
 background: var(--text-white, #FFF);
 `
 
 const AssignmentTitleBlock = styled.div`
+margin-left:10px;
 `
 
 const AssignmentTitle = styled.p`
@@ -275,15 +290,7 @@ display:flex;
 flex-direction: row;
 align-items: center;`
 
-const Title = styled.p`
-color: var(--text-100, #1C4980);
-font-feature-settings: 'clig' off, 'liga' off;
-font-family: Inter;
-font-size: 14px;
-font-style: normal;
-margin:0;
-font-weight: 600;
-line-height: 140%;`
+
 
 const TitleDivider = styled.span`
 color:#DADCE0;
@@ -307,11 +314,6 @@ const HrDotted = styled.hr`
   margin: 5px 0;
 `;
 
-const HrSeparator = styled.hr`
-border: none;
-border-top: 1px solid #DDE5EA;
-margin:-11px 0 19px;
-`;
 
 const FooterSection = styled.div`
 display: flex;
@@ -389,16 +391,6 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;`
 
-const NavBar = styled.div`
+const AssignmentBlock = styled.div`
 display:flex;
 `
-
-const AssessmentTab = styled(Nav)`
-margin-left:10px;`
-
-const ActiveAssessment = styled(Nav.Link)`
-.nav-link::active
-{
-color: #0073E6 !important; 
-border-bottom-color: #0073E6 !important
-}`
